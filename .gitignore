@@ -1,27 +1,8 @@
-# Build artifacts
-/target/
-**/*.rs.bk
-*.o
-*.a
-*.so
-*.dylib
-*.dll
-*.exe
-*.elf
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Documentation (per SigmaOS policy: docs in wiki)
-*.md
-!README.md
-!CONTRIBUTING.md
-!LICENSE
+__pycache__/
+*.pyc
+target/
+build/
+dist/
+*.iso
+.venv/
+node_modules/
