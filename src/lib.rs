@@ -1,11 +1,33 @@
-//! SigmaOS-website — Project website and documentation site for SigmaOS
-//!
-//! Part of the SigmaOS multi-repository ecosystem.
-//! See https://github.com/AaryanSinghChauhan09/SigmaOS for details.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct WebPage {
+    pub route: String,
+    pub html_template: String,
+}
 
-#![allow(dead_code)]
+#[derive(Debug, Default)]
+pub struct WebsiteCompiler {
+    pages: Vec<WebPage>,
+}
 
-/// Module entry point for SigmaOS-website
-pub fn version() -> &'static str {
-    env!("CARGO_PKG_VERSION")
+impl WebsiteCompiler {
+    pub fn new() -> Self { Self { pages: Vec::new() } }
+    pub fn add_page(&mut self, route: &str, template: &str) {
+        self.pages.push(WebPage { route: route.into(), html_template: template.into() });
+    }
+    pub fn page_count(&self) -> usize { self.pages.len() }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_website_compiler_aaa() {
+        // Arrange
+        let mut site = WebsiteCompiler::new();
+        // Act
+        site.add_page("/", "index.html");
+        site.add_page("/download", "download.html");
+        // Assert
+        assert_eq!(site.page_count(), 2);
+    }
 }
