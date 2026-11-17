@@ -1,6 +1,6 @@
 [component]
 name = "SigmaOS-website"
 tier = 4
-description = "Official SigmaOS web portal, documentation site generator, and static asset compiler"
+description = "SigmaOS website & docs site generator"
 contracts = ['website-generator', 'static-site-compiler', 'asset-minifier']
 upstream_inspirations = ['https://github.com/omacom/website']
